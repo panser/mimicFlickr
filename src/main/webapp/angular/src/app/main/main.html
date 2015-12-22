@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="container-fluid">
+    <div class="row well">
+      <div class="col-md-1">id</div>
+      <div class="col-md-3">
+        <input id="name" ng-model="main.photoCriteria.name" ng-change="main.handleEvent($event)"
+               class="form-control " type="search" placeholder="Name:" type="text"/>
+      </div>
+      <div class="col-md-3">CreateTime</div>
+      <div class="col-md-5">
+        <input id="description" ng-model="main.photoCriteria.description" ng-change="main.handleEvent($event)"
+                class="form-control " type="search" placeholder="Description:" type="text"/>
+      </div>
+    </div>
+    <div class="row " ng-repeat="item in main.items" >
+      <div class="col-md-1"> {{item.id}}</div>
+      <div class="col-md-3">{{item.name}}</div>
+      <div class="col-md-3">{{item.createTime | date : "dd MMM yyyy H:mm"}}</div>
+      <div class="col-md-4">{{item.description}}</div>
+      <div class="col-md-1">
+        <div class="thumbnail" >
+          <a ng-href="{{main.urlPhotoOne}}{{ item.name }}">
+            <img ng-src="{{main.urlPhotoOne}}{{ item.name }}">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
